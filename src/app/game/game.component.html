@@ -1,0 +1,73 @@
+<hr />
+
+<hr />
+
+
+
+<h1>Welcome To GameCity: Experience the Online Gaming Experience</h1>
+
+
+
+<form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+
+
+
+  <table>
+
+   <tr>
+
+    <td>Name</td>
+
+    <div class="form-group">
+
+    <td><input type="text" class="form-control" formControlName="name" placeholder="Enter Name" required minlength="4" maxlength="10">
+
+     <div *ngIf="submitted &&gameForm.controls.name.errors" class="error">
+
+       <div class="text-danger" *ngIf="gameForm.controls.name.errors.required">name is required</div>
+
+       </div></td>
+
+   </div>
+
+   </tr>
+
+   <tr>
+
+    <td>Address</td>
+
+    <div class="form-group">
+
+    <td><input type="text" class="form-control" formControlName="address" placeholder="Enter Address" required minlength="5" maxlength="15">
+
+     <div *ngIf="submitted &&gameForm.controls.address.errors"class="error">
+
+       <div class="text-danger" *ngIf="gameForm.controls.address.errors.required">address is required</div>
+
+       </div>
+</td>
+
+   </div>
+
+   </tr>
+
+   <tr>
+
+    <td>Amount</td>
+
+    <div class="form-group">
+
+    <td><input type="number" class="form-control" [formControl]="amount" placeholder="Enter Amount " required min="600">
+
+    </td>
+
+   </div>
+
+   </tr>
+</table>
+
+  <button class="btn btn-success" (click) ="getAmount()">Buy Card</button>
+<br>
+
+   Note: 100 Rs will be deducted for service charges
+</form>
